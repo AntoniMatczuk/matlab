@@ -8,7 +8,7 @@ for i = 1:length(n_values)
   A = generate_matrix(n);
   b = generate_vector(n);
 
-  [x, ~, ~, t, err] = lu_partial_pivoting(A, b);
+  [x, t, err] = universal_lu_solver(A, b);
 
   times(i) = t;
   errors(i) = err;

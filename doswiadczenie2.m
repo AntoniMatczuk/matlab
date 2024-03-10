@@ -12,7 +12,7 @@ for i = 1:length(n_values)
   b = generate_vector2(n);
   
   % Rozkład LU z częściowym wyborem elementu głównego
-  [x_lu, ~, ~, t_lu, err_lu] = lu_partial_pivoting(A, b);
+  [x_lu, t_lu, err_lu] = universal_lu_solver(A, b);
   
   % Metoda Gaussa-Seidela
   [x_gs, iexe, texe] = GS(A, b, 1e-9, 1000 * n);
